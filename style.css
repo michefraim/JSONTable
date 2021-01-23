@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300&display=swap');
+
+html {
+    font-size: 10px;
+}
+
+body {
+    text-align: center;
+    margin: 170px;
+    background: rgb(56, 56, 56);
+}
+
+table {
+    width: 100%;
+    background: rgb(243, 241, 237);
+    font-weight: 700;
+    border-radius: 10px;
+}
+
+th {
+    font-size: 2.5rem;
+    border: 1px solid black;
+    background: rgb(72, 208, 212);
+    border-radius: 5%;
+}
+
+tr {
+    font-size: 1.9rem;
+    border-radius: 5%;
+}
+
+td { 
+    padding: 20px;
+    border-radius: 5%;
+    border: 1px solid black;
+    font-family: 'Merriweather Sans', sans-serif;
+}
+
+.highestPercents {
+    background: rgb(0, 172, 0);
+}
+
+.middlePercents {
+    background: rgba(0, 172, 0, 0.671);
+}
+
+.lowestPercents {
+    background: rgba(0, 172, 0, 0.37);
+}
+
+.highestTime {
+    background: rgb(148, 1, 1);
+}
+
+.middleTime {
+    background: rgb(153, 82, 0);
+}
+
+.lowestTime {
+    background: rgb(255, 230, 0);
+}

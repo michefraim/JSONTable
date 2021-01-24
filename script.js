@@ -1,6 +1,6 @@
 "use strict";
 
-function tPassed(tNum) { // calculates time passed between two dates (time comes as milliseconds)
+function tPassed(tNum) { // calculates time passed between two dates
     const diffDays = Math.ceil(tNum / (1000 * 60 * 60 * 24));
     const diffHours = Math.ceil(tNum / (1000 * 60 * 60));
 
@@ -12,7 +12,7 @@ function tPassed(tNum) { // calculates time passed between two dates (time comes
     return x;
 }
 
-function fPercents(tGiven, tFinished) { // calculates finished tasks in percents of total.
+function fPercents(tGiven, tFinished) { // calculates finished tasks in percents
     return Math.floor(((tFinished / tGiven) * 100));
 }
 
@@ -35,6 +35,7 @@ function tableHead() {
     const tr = document.createElement('tr');
     document.querySelector('table').append(tr);
     const titles = ["Topic:", "Start Time:", "Finish Time:", "Time Elapsed:", "Tasks Given", "Tasks Finished:", "% of finished:"];
+
     for (let i = 0; i < titles.length; i++) {
         const th = document.createElement('th');
         th.innerText = titles[i];
@@ -50,6 +51,7 @@ function tableContent(arr) {
         for (let prop in arr[i]) {
             if (Object.prototype.hasOwnProperty.call(arr[i], prop)) {
                 const td = document.createElement('td');
+
                 if (prop === "startTime" || prop === "finishTime") { //start time and finish time 
                     td.innerText = niceDate(arr[i][prop]);
                     tr.append(td);
@@ -59,7 +61,6 @@ function tableContent(arr) {
                         td.innerText = arr[i][prop];
                         td.classList.add('lowestTime');
                         tr.append(td);
-
                     } else if (x <= 220000000) {
                         td.innerText = arr[i][prop];
                         td.classList.add('middleTime');
@@ -71,7 +72,6 @@ function tableContent(arr) {
                     }
 
                 } else if (prop === "finishedPercents") {
-                    
                     if ((fPercents(arr[i].tasksGiven, arr[i].tasksFinished) <= 50)) {
                         td.innerText = arr[i][prop];
                         td.classList.add('lowestPercents');
@@ -80,8 +80,7 @@ function tableContent(arr) {
                         td.innerText = arr[i][prop];
                         td.classList.add('middlePercents');
                         tr.append(td);
-                    }
-                    else {
+                    } else {
                         td.innerText = arr[i][prop];
                         td.classList.add('highestPercents');
                         tr.append(td);

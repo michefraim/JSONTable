@@ -179,7 +179,7 @@ const tasks = [
 ];
 
 
-for (let i = 0; i < tasks.length; i++) {
+for (let i = 0; i < tasks.length; i++) { //adds the last two object prop
     const timeNumber = miliTime(tasks[i].finishTime, tasks[i].startTime); //difference between dates in milliseconds
     tasks[i].tTotal = tPassed(timeNumber);
     tasks[i].finishedPercents = fPercents(tasks[i].tasksGiven, tasks[i].tasksFinished) + "%";
